@@ -1,10 +1,12 @@
 import { Outlet } from "react-router-dom";
-import Layout from "../globalComponent/Layout";
+import Navigation from "../globalComponent/Navigation";
 
 const Root = () => {
   return (
     <>
-      <Layout />
+      <header>
+        <Navigation />
+      </header>
       <main id="appRoot">
         <Outlet />
       </main>

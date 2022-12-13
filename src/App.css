@@ -8,6 +8,11 @@
   padding:.5em;
   width:100%;
 }
+
+.home-card{
+  padding:.5em;
+}
+
 #navigation-list a{
   width:100%;
 }
@@ -46,3 +51,4 @@
 .read-the-docs {
   color: #888;
 }
+

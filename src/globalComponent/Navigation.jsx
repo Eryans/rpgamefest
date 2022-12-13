@@ -14,7 +14,7 @@ import { Home } from "@mui/icons-material";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import RoomIcon from "@mui/icons-material/Room";
 
-const Layout = ({ classes }) => {
+const Navigation = ({ classes }) => {
   const [drawer, setDrawer] = React.useState({
     right: false,
     left: false,
@@ -84,7 +84,7 @@ const Layout = ({ classes }) => {
 
   return (
     <nav>
-      <img src="../../public/vite.svg" alt="Logo de rpgameFest" />
+      <img src="../../public/images/logo_asso.png" alt="Logo de rpgameFest" />
       <Button onClick={toggleDrawer(currentDrawerDirection, true)}>
         <MenuIcon />
       </Button>
@@ -99,4 +99,4 @@ const Layout = ({ classes }) => {
   );
 };
 
-export default Layout;
+export default Navigation;

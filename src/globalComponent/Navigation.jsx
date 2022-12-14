@@ -13,8 +13,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Home } from "@mui/icons-material";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import RoomIcon from "@mui/icons-material/Room";
-
-const Layout = ({ classes }) => {
+import { ticketLink } from "../../globalData";
+import LocalActivityIcon from "@mui/icons-material/LocalActivity";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+const Navigation = ({ classes, handleThemeChange }) => {
   const [drawer, setDrawer] = React.useState({
     right: false,
     left: false,
@@ -50,6 +52,12 @@ const Layout = ({ classes }) => {
         link: "/plan",
         icon: <RoomIcon />,
       },
+      {
+        text: "Billeterie",
+        link: ticketLink,
+        icon: <LocalActivityIcon />,
+        external: true,
+      },
     ];
 
     return (
@@ -60,20 +68,45 @@ const Layout = ({ classes }) => {
         onKeyDown={toggleDrawer(currentDrawerDirection, false)}
       >
         <List id="navigation-list">
+          <ListItem disablePadding> 
+            <ListItemButton onClick={handleThemeChange}>
+              <ListItemIcon style={{ minWidth: 0 }}>
+                <DarkModeIcon />
+              </ListItemIcon>
+              <ListItemText>Theme clair/sombre</ListItemText>
+            </ListItemButton>
+          </ListItem>
           {linkData.map((data, index) => (
             <ListItem key={data.text} disablePadding>
               <ListItemButton>
-                <Link
-                  to={data.link}
-                  style={{
-                    "& > div": { minWidth: 0 },
-                    display: "flex",
-                    gap: ".5em",
-                  }}
-                >
-                  <ListItemIcon style={{minWidth:0}}>{data.icon}</ListItemIcon>
-                  <ListItemText primary={data.text} />
-                </Link>
+                {data.external ? (
+                  <a
+                    href={data.link}
+                    target="_blank"
+                    style={{
+                      "& > div": { minWidth: 0 },
+                      display: "flex",
+                      gap: ".5em",
+                    }}
+                  >
+                    {data.icon}
+                    {data.text}
+                  </a>
+                ) : (
+                  <Link
+                    to={data.link}
+                    style={{
+                      "& > div": { minWidth: 0 },
+                      display: "flex",
+                      gap: ".5em",
+                    }}
+                  >
+                    <ListItemIcon style={{ minWidth: 0 }}>
+                      {data.icon}
+                    </ListItemIcon>
+                    <ListItemText primary={data.text} />
+                  </Link>
+                )}
               </ListItemButton>
             </ListItem>
           ))}
@@ -84,7 +117,11 @@ const Layout = ({ classes }) => {
 
   return (
     <nav>
-      <img src="../../public/vite.svg" alt="Logo de rpgameFest" />
+      <img
+        style={{ width: "5em" }}
+        src="../../public/images/logo_asso.png"
+        alt="Logo de rpgameFest"
+      />
       <Button onClick={toggleDrawer(currentDrawerDirection, true)}>
         <MenuIcon />
       </Button>
@@ -99,4 +136,4 @@ const Layout = ({ classes }) => {
   );
 };
 
-export default Layout;
+export default Navigation;

@@ -24,10 +24,15 @@ a:hover {
   color: #535bf2;
 }
 
-body {
+main {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+}
+
+header {
+  background-color: white;
+  padding-bottom: 1vh;
 }
 
 nav{
@@ -38,15 +43,19 @@ nav{
 }
 
 nav img, nav svg{
+  display: flex;
   font-size: 2.75em !important;
-  height: 7.5vh;
-  width: 100%;
-  object-fit: contain;
+  justify-content: space-between;
+  color: #E39929;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+body {
+  margin: 0;
+}
+
+p {
+  font-family: Helvetica, sans-serif;
+  text-align: left;
 }
 
 button {
@@ -79,4 +88,18 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+@font-face {
+  font-family: "Enchanted_land";
+  src: local("enchanted_land-webfont"),
+  url("./../public/fonts/enchanted_land-webfont.woff") format("truetype");
+  }
+
+.enchanted{
+  font-family: 'Enchanted_land', Arial, sans-serif !important;
+}
+
+.bBackground{
+  background-color:#3B6B90;
 }

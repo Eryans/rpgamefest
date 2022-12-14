@@ -7,7 +7,7 @@ const Plan = () => {
   const [openMap, setOpenMap] = useState(false);
   return (
     <>
-      <ImageViewer image={"/images/Screenshot_20221214_093201.png"} />
+      <ImageViewer image={"/images/plan.png"} />
     </>
   );
 };

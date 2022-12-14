@@ -20,7 +20,7 @@ const ImageViewer = ({ image }) => {
               overflowX: "scroll",
               height: "100vh",
               width: "100vw",
-              position: "absolute",
+              position: "fixed",
               top: 0,
               left: 0,
               zIndex: 1,
@@ -28,7 +28,7 @@ const ImageViewer = ({ image }) => {
           >
             <CloseIcon
               style={{
-                fontSize: "4em",
+                fontSize: "1.75em",
                 position: "fixed",
                 top: 0,
                 right: ".25em",
@@ -39,7 +39,7 @@ const ImageViewer = ({ image }) => {
             />
             <img
               style={{ height: "100%", objectFit: "cover" }}
-              src="/images/Screenshot_20221214_093201.png"
+              src={image}
             />
           </Paper>
         </>

@@ -118,7 +118,7 @@ const Navigation = ({ classes, handleThemeChange }) => {
   return (
     <nav>
       <img
-        style={{ width: "3em" }}
+        style={{ width: "5em" }}
         src="../../public/images/logo_asso.png"
         alt="Logo de rpgameFest"
       />

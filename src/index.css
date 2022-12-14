@@ -32,7 +32,7 @@ main {
 
 header {
   background-color: white;
-  border-bottom: 2px solid #1a1a1a;
+  border-bottom: 10px solid #3B6B90;
   padding-bottom: 1vh;
 }
 
@@ -47,15 +47,8 @@ nav img, nav svg{
   display: flex;
   font-size: 2.75em !important;
   justify-content: space-between;
-  color: #EA2026;
+  color: #E39929;
 }
-
-h1 {
-  font-size: 4.2em;
-  line-height: 1.1;
-  margin: .25em;
-}
-
 
 body {
   margin: 0;
@@ -106,5 +99,8 @@ button:focus-visible {
 
 .enchanted{
   font-family: 'Enchanted_land', Arial, sans-serif !important;
-  font-size: 1.2em !important;
+}
+
+.bBackground{
+  background-color:#3B6B90;
 }

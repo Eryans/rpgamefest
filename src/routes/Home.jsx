@@ -3,8 +3,13 @@ import { Link } from "react-router-dom";
 import { ticketLink } from "../../globalData";
 
 const Home = () => {
+  var audio = new Audio("uwu-noise.mp3")
   return <div >
-    <Button variant="contained" className="enchanted"  style={{width:"100%", marginBottom:"1.5em",backgroundColor:"#E39929", fontSize:"1.5em"}} ><a style={{color:"white"}} href={ticketLink} target="_blank">Billeterie</a></Button>
+    <Button variant="contained" onClick={()=>(audio.play())} className="enchanted"  style={{width:"100%", marginBottom:"1.5em",backgroundColor:"#E39929", fontSize:"1.5em"}}>
+      {/* <a style={{color:"white"}} href={ticketLink} target="_blank"> */}
+        Billeterie
+        {/* </a> */}
+        </Button>
     <img style={{width:"100%"}} src="./../public/images/roliste.jpg" alt="image de roliste" />  
     <p>RPGaming Fest est avant tout un événement de passionnés englobant le temps d’un week-end 
       le meilleur du jeu de rôle. Convention située au cœur de la Normandie, nous proposons des animations

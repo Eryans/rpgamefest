@@ -1,11 +1,38 @@
+import { Button } from "@mui/material";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Navigation from "../globalComponent/Navigation";
 
 const Root = () => {
+  const darkThemeStyle = {
+    backgroundColor: "rgb(25,25,25)",
+    color:"white"
+  };
+  const lightThemeStyle = {
+    backgroundColor: "rgb(255,255,255)",
+    color:"black"
+  };
+  if (!window.localStorage["currentTheme"])
+    window.localStorage["currentTheme"] = "light";
+
+  const [currentTheme, setCurrentTheme] = useState(
+    window.localStorage["currentTheme"] === "light"
+      ? darkThemeStyle
+      : lightThemeStyle
+  );
   const [isScrollingDown, setIsScrollingDown] = useState();
+
   var lastScrollTop = 0;
 
+  const handleThemeChange = () => {
+    window.localStorage["currentTheme"] =
+      window.localStorage["currentTheme"] === "light" ? "dark" : "light";
+    setCurrentTheme(
+      window.localStorage["currentTheme"] === "light"
+        ? darkThemeStyle
+        : lightThemeStyle
+    );
+  };
   // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
   document.addEventListener(
     "scroll",
@@ -33,12 +60,13 @@ const Root = () => {
           zIndex: 99,
           height: isScrollingDown ? "0px" : "initial",
           opacity: isScrollingDown ? 0 : 1,
-          transition: "all .1s linear"
+          transition: "all .1s linear",
+          ...currentTheme
         }}
       >
-        <Navigation />
+        <Navigation handleThemeChange={handleThemeChange} />
       </header>
-      <main id="appRoot" style={{paddingTop:'8.5em'}}>
+      <main id="appRoot" style={{ paddingTop: "8.5em", ...currentTheme }}>
         <Outlet />
       </main>
     </>

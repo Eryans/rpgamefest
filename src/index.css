@@ -30,14 +30,10 @@ main {
   min-height: 100vh;
 }
 
-body{
-  background-image:url(./../public/images/dice.jpg);
-}
-
 header {
   background-color: white;
   border-bottom: 2px solid #1a1a1a;
-  padding-bottom: 3vh;
+  padding-bottom: 1vh;
 }
 
 nav{
@@ -55,11 +51,11 @@ nav img, nav svg{
 }
 
 h1 {
-  font-family: 'Enchanted_land', Arial, sans-serif;
   font-size: 4.2em;
   line-height: 1.1;
   margin: .25em;
 }
+
 
 body {
   margin: 0;
@@ -67,6 +63,7 @@ body {
 
 p {
   font-family: Helvetica, sans-serif;
+  text-align: left;
 }
 
 button {
@@ -106,3 +103,8 @@ button:focus-visible {
   src: local("enchanted_land-webfont"),
   url("./../public/fonts/enchanted_land-webfont.woff") format("truetype");
   }
+
+.enchanted{
+  font-family: 'Enchanted_land', Arial, sans-serif !important;
+  font-size: 1.2em !important;
+}

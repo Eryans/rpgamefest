@@ -1,9 +1,9 @@
-import { Paper } from "@mui/material";
+import { Button, Paper } from "@mui/material";
 
 const Home = () => {
-  return <div>
+  return <div >
+    <Button variant="contained" className="enchanted"  style={{width:"100%", marginBottom:"1.5em",backgroundColor:"red"}} >Billeterie</Button>
     <Paper className="home-card">
-    <h1>Accueil</h1>
     <p>RPGamming Fest est avant tout un événement de passionnés englobant le temps d’un week-end 
       le meilleur du jeu de rôle. Convention située au cœur Normandie, nous proposons des animations
       et ateliers ancrés dans le moderne autant que dans le traditionnel. Que ce soit dans le médiéval

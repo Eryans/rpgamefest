@@ -84,7 +84,7 @@ const Navigation = ({ classes }) => {
 
   return (
     <nav>
-      <img src="../../public/images/logo_asso.png" alt="Logo de rpgameFest" />
+      <img style={{width:"3em"}} src="../../public/images/logo_asso.png" alt="Logo de rpgameFest" />
       <Button onClick={toggleDrawer(currentDrawerDirection, true)}>
         <MenuIcon />
       </Button>

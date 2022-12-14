@@ -10,7 +10,7 @@ const Home = () => {
         Billeterie
         {/* </a> */}
         </Button>
-    <img style={{width:"100%"}} src="./../public/images/roliste.jpg" alt="image de roliste" />  
+    <img style={{width:"100%"}} src="/images/roliste.jpg" alt="image de roliste" />  
     <p>RPGaming Fest est avant tout un événement de passionnés englobant le temps d’un week-end 
       le meilleur du jeu de rôle. Convention située au cœur de la Normandie, nous proposons des animations
       et ateliers ancrés dans le moderne autant que dans le traditionnel. Que ce soit dans le médiéval

@@ -3,20 +3,30 @@ import { useState } from "react";
 import { days, planningData } from "../data/planningData";
 import CloseIcon from "@mui/icons-material/Close";
 
-const PlanningCard = ({
-  title,
-  date,
-  peoples,
-  onClick,
-  place,
-}) => {
+const PlanningCard = ({ title, date, peoples, onClick, place }) => {
+  const gradiantLight =
+    "linear-gradient( 35deg, rgba(255, 255, 255, 1) 0%,rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 0.9) 75%,rgba(0, 212, 255, 0) 100%)";
+  const gradiantDark =
+    "linear-gradient( 35deg, rgba(50, 50, 50, 1) 0%,rgba(50, 50, 50, 1) 60%, rgba(50, 50, 50, 0.9) 75%,rgba(0, 212, 255, 0) 100%)";
 
   return (
     <div style={{ width: "100%" }}>
-      <Paper className="planning-card">
-        <p>
-          {date.hour}
-        </p>
+      <Paper className="planning-card" style={{
+        color:
+        window.localStorage["currentTheme"] === "dark"
+          ? "black"
+          : "white",
+      }}>
+        <div
+          class="planning-card-overlay"
+          style={{
+            background:
+              window.localStorage["currentTheme"] === "dark"
+                ? gradiantLight
+                : gradiantDark,
+          }}
+        />
+        <p>{date.hour}</p>
         <h3>{title}</h3>
         <div>
           <p>
@@ -39,6 +49,11 @@ const PlanningCard = ({
 };
 
 const DataDrawer = ({ open, data, setOpen }) => {
+  const gradiantLight =
+    "linear-gradient( 150deg, rgba(255, 255, 255, 1) 0%,rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 0.9) 75%,rgba(0, 212, 255, 0) 100%)";
+  const gradiantDark =
+    "linear-gradient( 150deg, rgba(25, 25, 25, 1) 0%,rgba(25, 25, 25, 1) 60%, rgba(25, 25, 25, 0.9) 75%,rgba(0, 212, 255, 0) 100%)";
+
   return (
     data && (
       <Paper
@@ -55,18 +70,35 @@ const DataDrawer = ({ open, data, setOpen }) => {
           width: open ? "100vw" : 0,
         }}
       >
+        <div
+          class="planning-card-overlay-drawer"
+          style={{
+            background:
+              window.localStorage["currentTheme"] === "dark"
+                ? gradiantLight
+                : gradiantDark,
+          }}
+        />
         <CloseIcon
           style={{
             fontSize: "1.75em",
             position: "fixed",
             top: 0,
             right: ".25em",
-            zIndex: 2,
+            zIndex: 99,
             cursor: "pointer",
           }}
           onClick={() => setOpen(false)}
         />
-        <div class="drawer-data">
+        <div
+          class="drawer-data"
+          style={{
+            color:
+              window.localStorage["currentTheme"] === "dark"
+                ? "black"
+                : "white",
+          }}
+        >
           <p>
             {data.date.day} {data.date.hour}
           </p>

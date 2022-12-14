@@ -39,7 +39,7 @@ const Navigation = ({ classes, handleThemeChange }) => {
     const linkData = [
       {
         text: "Accueil",
-        link: "/home",
+        link: "/",
         icon: <Home />,
       },
       {
@@ -118,8 +118,8 @@ const Navigation = ({ classes, handleThemeChange }) => {
   return (
     <nav>
       <img
-        style={{ width: "5em" }}
-        src="../../public/images/logo_asso.png"
+        style={{ width: "3em" }}
+        src={ window.localStorage["currentTheme"] === "dark"? "/images/logo_asso.png" : "/images/logo_asso_blanc.png"}
         alt="Logo de rpgameFest"
       />
       <Button onClick={toggleDrawer(currentDrawerDirection, true)}>

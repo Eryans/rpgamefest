@@ -119,7 +119,7 @@ const Navigation = ({ classes, handleThemeChange }) => {
     <nav>
       <img
         style={{ width: "3em" }}
-        src={ window.localStorage["currentTheme"] === "dark"? "images/logo_asso.png" : "images/logo_asso_blanc.png"}
+        src={ window.localStorage["currentTheme"] === "dark"? "/images/logo_asso.png" : "/images/logo_asso_blanc.png"}
         alt="Logo de rpgameFest"
       />
       <Button onClick={toggleDrawer(currentDrawerDirection, true)}>

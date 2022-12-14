@@ -15,8 +15,8 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import RoomIcon from "@mui/icons-material/Room";
 import { ticketLink } from "../../globalData";
 import LocalActivityIcon from "@mui/icons-material/LocalActivity";
-
-const Navigation = ({ classes }) => {
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+const Navigation = ({ classes, handleThemeChange }) => {
   const [drawer, setDrawer] = React.useState({
     right: false,
     left: false,
@@ -68,6 +68,14 @@ const Navigation = ({ classes }) => {
         onKeyDown={toggleDrawer(currentDrawerDirection, false)}
       >
         <List id="navigation-list">
+          <ListItem disablePadding> 
+            <ListItemButton onClick={handleThemeChange}>
+              <ListItemIcon style={{ minWidth: 0 }}>
+                <DarkModeIcon />
+              </ListItemIcon>
+              <ListItemText>Theme clair/sombre</ListItemText>
+            </ListItemButton>
+          </ListItem>
           {linkData.map((data, index) => (
             <ListItem key={data.text} disablePadding>
               <ListItemButton>

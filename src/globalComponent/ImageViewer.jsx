@@ -15,7 +15,7 @@ const ImageViewer = ({ image }) => {
       </div>
       {openMap && (
         <>
-          <Paper
+          <div
             style={{
               overflowX: "scroll",
               height: "100vh",
@@ -23,7 +23,8 @@ const ImageViewer = ({ image }) => {
               position: "fixed",
               top: 0,
               left: 0,
-              zIndex: 1,
+              zIndex: 99,
+              backgroundColor: "rgba(0,0,0,.6)",
             }}
           >
             <CloseIcon
@@ -37,11 +38,8 @@ const ImageViewer = ({ image }) => {
               }}
               onClick={() => setOpenMap(false)}
             />
-            <img
-              style={{ height: "100%", objectFit: "cover" }}
-              src={image}
-            />
-          </Paper>
+            <img style={{ height: "100%", objectFit: "contain",width:"200vw"}} src={image} />
+          </div>
         </>
       )}
     </>

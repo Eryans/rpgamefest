@@ -7,15 +7,9 @@ const PlanningCard = ({
   title,
   date,
   peoples,
-  description,
   onClick,
   place,
 }) => {
-  const handleTextCut = (text) => {
-    const maxChars = 255;
-    if (text.length > maxChars) return text.slice(maxChars) + "...";
-    return text;
-  };
 
   return (
     <div style={{ width: "100%" }}>
@@ -35,7 +29,7 @@ const PlanningCard = ({
           </p>
         </div>
         <p>{place}</p>
-        <div>{handleTextCut(description)}</div>
+
         <Button variant={"contained"} onClick={onClick}>
           Voir plus de détail
         </Button>
@@ -109,7 +103,6 @@ const Planning = () => {
                   title={data.title}
                   date={data.date}
                   peoples={data.peoples}
-                  description={data.description}
                   place={data.place}
                   onClick={() => {
                     setData(data);
@@ -132,7 +125,6 @@ const Planning = () => {
                   title={data.title}
                   date={data.date}
                   peoples={data.peoples}
-                  description={data.description}
                   place={data.place}
                   onClick={() => {
                     setData(data);

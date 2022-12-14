@@ -1,8 +1,9 @@
 import { Button, Paper } from "@mui/material";
+import { ticketLink } from "../../globalData";
 
 const Home = () => {
   return <div >
-    <Button variant="contained" className="enchanted"  style={{width:"100%", marginBottom:"1.5em",backgroundColor:"#E39929", fontSize:"1.5em"}} >Billeterie</Button>
+    <Button variant="contained" className="enchanted"  style={{width:"100%", marginBottom:"1.5em",backgroundColor:"#E39929", fontSize:"1.5em"}} ><a href={ticketLink} target="_blank">Billeterie</a></Button>
     <img style={{width:"100%"}} src="./../public/images/roliste.jpg" alt="image de roliste" />  
     <p>RPGamming Fest est avant tout un événement de passionnés englobant le temps d’un week-end 
       le meilleur du jeu de rôle. Convention située au cœur de la Normandie, nous proposons des animations

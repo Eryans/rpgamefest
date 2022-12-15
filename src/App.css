@@ -7,11 +7,11 @@
 .planning-card {
   position: relative;
   padding: 0.5em;
-  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 0.5em;
   background-image: url(/public/images/dice.jpg);
+  border-left: 3px solid #3B6B90;
 }
 .planning-card-overlay {
   position: absolute;
@@ -37,37 +37,56 @@
 .home-text-block img {
   width: 100%;
 }
-.plan-container{
+.plan-container {
   display: flex;
   flex-direction: column;
-  gap:5em;
+  gap: 5em;
 }
-.stand-card{
-  padding: .1em 1em;
+.stand-card {
+  padding: 0.1em 1em;
 }
-.planning-card-container{
+.planning-card-container {
   display: flex;
   flex-direction: column;
-  gap:1em;
+  gap:2em;
 }
-.nav-desk ul{
+.plan-card-container{
+  display: flex;
+  flex-direction: column;
+  gap:2em;
+}
+
+.nav-desk ul {
   height: 100%;
-  width:300px ;
+  width: 300px;
   background-color: white;
   position: fixed;
   top: 0;
   left: 0;
   z-index: -1;
-padding: 8em 0 0 0;
+  padding: 8em 0 0 0;
+  border-right: 1px solid lightgray;
 }
-main > div:not(:first-child){
+main > div:not(:first-child) {
   z-index: 2;
   position: relative;
 }
+@media screen and (max-width: 365px){
+  .expo-block{
+    flex-wrap: wrap;
+  }
+}
 @media screen and (min-width: 720px) {
-  .planning-card-container{
+  .planning-card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .plan-card-container{
     display:grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(5,1fr);
+  }
+  .plan-card{
+    width:100%;
   }
   main > div {
     display: flex;
@@ -79,8 +98,8 @@ main > div:not(:first-child){
   .home-card {
     width: 50vw;
   }
-  .home-text-block button{
-    width:initial !important;
+  .home-text-block button {
+    width: initial !important;
     align-self: flex-start;
   }
   .home-text-block {
@@ -88,13 +107,21 @@ main > div:not(:first-child){
     flex-direction: column;
     width: 50vw;
   }
-  .drawer-data{
+  .drawer-data {
     width: 100%;
     padding-left: 4.5em !important;
   }
 }
+.main-image{
+  width:100%;
+}
+main{
+  overflow-x: hidden;
+}
 @media screen and (min-width: 1080px) {
-
+  .main-image{
+    width:150%;
+  }
 }
 .home-card {
   padding: 0.5em;
@@ -146,3 +173,4 @@ main > div:not(:first-child){
 .read-the-docs {
   color: #888;
 }
+

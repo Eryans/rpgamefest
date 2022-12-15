@@ -3,12 +3,11 @@ import { Link } from "react-router-dom";
 import { ticketLink } from "../../globalData";
 
 const Home = () => {
-  var audio = new Audio("uwu-noise.mp3")
   return <div >
-    <Button variant="contained" onClick={()=>(audio.play())} className="enchanted"  style={{width:"100%", marginBottom:"1.5em",backgroundColor:"#E39929", fontSize:"1.5em"}}>
-      {/* <a style={{color:"white"}} href={ticketLink} target="_blank"> */}
+    <Button variant="contained" className="enchanted"  style={{width:"100%", marginBottom:"1.5em",backgroundColor:"#E39929", fontSize:"1.5em"}}>
+      <a style={{color:"white"}} href={ticketLink} target="_blank">
         Billeterie
-        {/* </a> */}
+        </a>
         </Button>
     <img style={{width:"100%"}} src="/images/roliste.jpg" alt="image de roliste" />  
     <p>RPGaming Fest est avant tout un événement de passionnés englobant le temps d’un week-end 
@@ -22,8 +21,8 @@ const Home = () => {
     <div style={{display:"flex",gap:".6em", justifyContent:"space-between"}}>
     <img style={{width:"10em"}} src="/images/parcExpo-removebg-preview.png" alt="Logo du parc exposition" />
     <div style={{display:"flex",flexDirection:"column", gap:".8em", justifyContent:"center"}}> 
-    <Button variant="contained" className="enchanted" style={{backgroundColor:"#3B6B90",width:"100%",fontSize:"1.2em"}}><Link style={{color:"white"}}to="/planning">Programme</Link></Button>
-    <Button variant="contained" className="enchanted" style={{backgroundColor:"#3B6B90",width:"150px",fontSize:"1.2em"}}><Link style={{color:"white"}}to="/plan">Plan</Link></Button>
+    <Button variant="contained" className="enchanted" style={{backgroundColor:"#3B6B90",width:"35vw",fontSize:"1.2em"}}><Link style={{color:"white"}}to="/planning">Programme</Link></Button>
+    <Button variant="contained" className="enchanted" style={{backgroundColor:"#3B6B90",width:"35vw",fontSize:"1.2em"}}><Link style={{color:"white"}}to="/plan">Plan</Link></Button>
     </div>
     </div> 
     </Paper>

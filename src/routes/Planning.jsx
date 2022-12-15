@@ -41,7 +41,7 @@ const PlanningCard = ({ title, date, peoples, onClick, place }) => {
         </div>
         <p>{place}</p>
 
-        <Button variant={"contained"} onClick={onClick}>
+        <Button className="bBackground" variant={"contained"} onClick={onClick}>
           Voir plus de détail
         </Button>
       </Paper>
@@ -144,8 +144,8 @@ const Planning = () => {
   return (
     <>
       <DataDrawer open={open} data={data} setOpen={setOpen} />
-      <h1>Planning</h1>
-      <h2>Premier jour</h2>
+      <h1 className="enchanted" style={{fontSize:"4em"}} >Planning</h1>
+      <h2 className="enchanted" style={{fontSize:"3em"}} >Premier jour</h2>
       <List className="planning-card-container">
         {planningData.map((data, i) => {
           if (data.date.day === days[0])
@@ -167,7 +167,7 @@ const Planning = () => {
         })}
       </List>
       <Divider />
-      <h2>Deuxième jour</h2>
+      <h2 className="enchanted" style={{fontSize:"3em"}} >Deuxième jour</h2>
       <List className="planning-card-container">
         {planningData.map((data, i) => {
           if (data.date.day === days[1])

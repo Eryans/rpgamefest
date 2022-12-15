@@ -2,21 +2,51 @@ export const standData = [
   {
     name: "stand test",
     place: "A",
-    type: "Merchandise",
+    type: "Informations",
   },
   {
     name: "stand test a",
-    place: "E",
+    place: "B",
     type: "Nourriture",
   },
   {
     name: "stand test b",
-    place: "D",
+    place: "C",
     type: "Boisson",
   },
   {
     name: "stand test c",
-    place: "C",
+    place: "D",
+    type: "Merchandise",
+  },
+  {
+    name: "stand test c",
+    place: "E",
+    type: "Merchandise",
+  },
+  {
+    name: "stand test c",
+    place: "F",
+    type: "Merchandise",
+  },
+  {
+    name: "stand test c",
+    place: "G",
+    type: "Merchandise",
+  },
+  {
+    name: "stand test c",
+    place: "H",
+    type: "Merchandise",
+  },
+  {
+    name: "stand test c",
+    place: "H",
+    type: "Merchandise",
+  },
+  {
+    name: "stand test c",
+    place: "H",
     type: "Merchandise",
   },
 ];

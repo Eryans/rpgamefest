@@ -7,7 +7,6 @@
 .planning-card {
   position: relative;
   padding: 0.5em;
-  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 0.5em;
@@ -56,6 +55,7 @@
   flex-direction: column;
   gap:2em;
 }
+
 .nav-desk ul {
   height: 100%;
   width: 300px;
@@ -84,6 +84,9 @@ main > div:not(:first-child) {
     display:grid;
     grid-template-columns: repeat(5,1fr);
   }
+  .plan-card{
+    width:100%;
+  }
   main > div {
     display: flex;
     justify-content: center;
@@ -108,7 +111,16 @@ main > div:not(:first-child) {
     padding-left: 4.5em !important;
   }
 }
+.main-image{
+  width:100%;
+}
+main{
+  overflow-x: hidden;
+}
 @media screen and (min-width: 1080px) {
+  .main-image{
+    width:150%;
+  }
 }
 .home-card {
   padding: 0.5em;

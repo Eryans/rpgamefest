@@ -16,7 +16,7 @@ import RoomIcon from "@mui/icons-material/Room";
 import { ticketLink } from "../../globalData";
 import LocalActivityIcon from "@mui/icons-material/LocalActivity";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
-const Navigation = ({ classes, handleThemeChange }) => {
+const Navigation = ({ classes, handleThemeChange, currentTheme }) => {
   const [drawer, setDrawer] = React.useState({
     right: false,
     left: false,
@@ -35,7 +35,8 @@ const Navigation = ({ classes, handleThemeChange }) => {
     setDrawer({ ...drawer, [anchor]: open });
   };
 
-  const list = () => {
+  const list = (currentTheme) => {
+    console.log(currentTheme);
     const linkData = [
       {
         text: "Accueil",
@@ -62,12 +63,15 @@ const Navigation = ({ classes, handleThemeChange }) => {
 
     return (
       <Box
-        sx={{ width: window.innerWidth >= 1080 ? "30vw" : "60vw", display: window.innerWidth >= 1080 ? "block" : "initial" }}
+        sx={{
+          width: window.innerWidth >= 1080 ? "30vw" : "60vw",
+          display: window.innerWidth >= 1080 ? "block" : "initial",
+        }}
         role="presentation"
         onClick={() => toggleDrawer(currentDrawerDirection, false)}
         onKeyDown={() => toggleDrawer(currentDrawerDirection, false)}
       >
-        <List id="navigation-list">
+        <List id="navigation-list" style={{ ...currentTheme }}>
           <ListItem disablePadding>
             <ListItemButton onClick={handleThemeChange}>
               <ListItemIcon style={{ minWidth: 0 }}>
@@ -128,16 +132,22 @@ const Navigation = ({ classes, handleThemeChange }) => {
           alt="Logo de rpgameFest"
         />
       </Link>
-      <Button onClick={toggleDrawer(currentDrawerDirection, true)}>
-        <MenuIcon />
-      </Button>
-      <Drawer
-        anchor={currentDrawerDirection}
-        open={drawer[currentDrawerDirection]}
-        onClose={toggleDrawer(currentDrawerDirection, false)}
-      >
-        {list()}
-      </Drawer>
+      {window.innerWidth <= 1080 ? (
+        <>
+          <Button onClick={toggleDrawer(currentDrawerDirection, true)}>
+            <MenuIcon />
+          </Button>
+          <Drawer
+            anchor={currentDrawerDirection}
+            open={drawer[currentDrawerDirection]}
+            onClose={toggleDrawer(currentDrawerDirection, false)}
+          >
+            {list(currentTheme)}
+          </Drawer>
+        </>
+      ) : (
+        <div className="nav-desk">{list(currentTheme)}</div>
+      )}
     </nav>
   );
 };

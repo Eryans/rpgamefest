@@ -88,7 +88,7 @@ const Home = () => {
               className="enchanted"
               style={{
                 backgroundColor: "#3B6B90",
-                width: "100%",
+                width: "35vw",
                 fontSize: "1.2em",
               }}
             >
@@ -101,7 +101,7 @@ const Home = () => {
               className="enchanted"
               style={{
                 backgroundColor: "#3B6B90",
-                width: "150px",
+                width: "35vw",
                 fontSize: "1.2em",
               }}
             >

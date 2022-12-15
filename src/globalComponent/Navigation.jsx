@@ -135,7 +135,7 @@ const Navigation = ({ classes, handleThemeChange }) => {
     <nav>
       <Link to="/">
         <img
-          style={{ width: "3em" }}
+          style={{ width: "4em" }}
           src={
             window.localStorage["currentTheme"] === "dark"
               ? "/images/logo_asso.png"

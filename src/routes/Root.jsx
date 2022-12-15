@@ -62,7 +62,7 @@ document.querySelector("body").style.background = currentTheme.backgroundColor
       <header
         style={{
           position: "fixed",
-          width: "100vw",
+          width: window.innerWidth >= 1080 ? "300px" : "100vw",
           zIndex: 99,
           height: isScrollingDown ? "0px" : "initial",
           opacity: isScrollingDown ? 0 : 1,

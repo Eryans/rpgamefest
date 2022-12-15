@@ -81,6 +81,7 @@ const Home = () => {
               flexDirection: "column",
               gap: ".8em",
               justifyContent: "center",
+              width:'100%'
             }}
           >
             <Button
@@ -88,8 +89,8 @@ const Home = () => {
               className="enchanted"
               style={{
                 backgroundColor: "#3B6B90",
-                width: "35vw",
                 fontSize: "1.2em",
+                width:'100%'
               }}
             >
               <Link style={{ color: "white" }} to="/planning">
@@ -101,8 +102,8 @@ const Home = () => {
               className="enchanted"
               style={{
                 backgroundColor: "#3B6B90",
-                width: "35vw",
                 fontSize: "1.2em",
+                width:'100%'
               }}
             >
               <Link style={{ color: "white" }} to="/plan">

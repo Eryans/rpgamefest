@@ -38,7 +38,6 @@ const Navigation = ({ classes, handleThemeChange, currentTheme }) => {
   };
 
   const list = (currentTheme) => {
-    console.log(currentTheme);
     const linkData = [
       {
         text: "Accueil",
@@ -81,24 +80,13 @@ const Navigation = ({ classes, handleThemeChange, currentTheme }) => {
               </ListItemIcon>
               <ListItemText>Theme clair/sombre</ListItemText>
             </ListItemButton>
-            <ListItemButton onClick={handleThemeChange}>
-              <ListItemIcon style={{ minWidth: 0 }}>
-              <CloseIcon
-          style={{
-            fontSize: "1.75em",
-            position: "fixed",
-            top: "0.25em",
-            right: ".25em",
-            zIndex: 2,
-            cursor: "pointer",
-          }}
-          onClick={() => toggleDrawer(currentDrawerDirection, false)}
-        />
-              </ListItemIcon>
-            </ListItemButton>
           </ListItem>
           {linkData.map((data, index) => (
-            <ListItem key={data.text} disablePadding>
+            <ListItem
+              key={data.text + index}
+              disablePadding
+              onClick={() => toggleDrawer(currentDrawerDirection, false)}
+            >
               <ListItemButton>
                 {data.external ? (
                   <a
@@ -159,7 +147,7 @@ const Navigation = ({ classes, handleThemeChange, currentTheme }) => {
             open={drawer[currentDrawerDirection]}
             onClose={toggleDrawer(currentDrawerDirection, false)}
           >
-            {list(currentTheme)}
+            {list()}
           </Drawer>
         </>
       ) : (

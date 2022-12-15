@@ -20,15 +20,16 @@ const ImageViewer = ({ image }) => {
               overflowX: "scroll",
               display: "flex",
               justifyContent: "center",
-              height: "100vh",
-              width: "100vw",
+              height: "100%",
+              width: "100%",
               position: "fixed",
               top: 0,
               left: 0,
               zIndex: 99,
               backgroundColor: "rgba(0,0,0,.6)",
             }}
-          >
+            onClick={() => setOpenMap(false)}
+            >
             <CloseIcon
               style={{
                 fontSize: "1.75em",

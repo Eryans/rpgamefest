@@ -1,7 +1,7 @@
 #appRoot {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1em;
   text-align: center;
 }
 .planning-card {
@@ -55,8 +55,14 @@
   width:300px ;
   background-color: white;
   position: fixed;
-  top: 8em;
+  top: 0;
   left: 0;
+  z-index: -1;
+padding: 8em 0 0 0;
+}
+main > div:not(:first-child){
+  z-index: 2;
+  position: relative;
 }
 @media screen and (min-width: 720px) {
   .planning-card-container{

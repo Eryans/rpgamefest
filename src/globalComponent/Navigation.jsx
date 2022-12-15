@@ -16,6 +16,7 @@ import RoomIcon from "@mui/icons-material/Room";
 import { ticketLink } from "../../globalData";
 import LocalActivityIcon from "@mui/icons-material/LocalActivity";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
+import CloseIcon from "@mui/icons-material/Close";
 const Navigation = ({ classes, handleThemeChange }) => {
   const [drawer, setDrawer] = React.useState({
     right: false,
@@ -62,7 +63,7 @@ const Navigation = ({ classes, handleThemeChange }) => {
 
     return (
       <Box
-        sx={{ width: "60vw" }}
+        sx={{ width: "100vw" }}
         role="presentation"
         onClick={toggleDrawer(currentDrawerDirection, false)}
         onKeyDown={toggleDrawer(currentDrawerDirection, false)}
@@ -74,6 +75,21 @@ const Navigation = ({ classes, handleThemeChange }) => {
                 <DarkModeIcon />
               </ListItemIcon>
               <ListItemText>Theme clair/sombre</ListItemText>
+            </ListItemButton>
+            <ListItemButton onClick={handleThemeChange}>
+              <ListItemIcon style={{ minWidth: 0 }}>
+              <CloseIcon
+          style={{
+            fontSize: "1.75em",
+            position: "fixed",
+            top: "0.25em",
+            right: ".25em",
+            zIndex: 2,
+            cursor: "pointer",
+          }}
+          onClick={() => toggleDrawer(currentDrawerDirection, false)}
+        />
+              </ListItemIcon>
             </ListItemButton>
           </ListItem>
           {linkData.map((data, index) => (
@@ -119,7 +135,7 @@ const Navigation = ({ classes, handleThemeChange }) => {
     <nav>
       <Link to="/">
         <img
-          style={{ width: "3em" }}
+          style={{ width: "4em" }}
           src={
             window.localStorage["currentTheme"] === "dark"
               ? "/images/logo_asso.png"
@@ -131,7 +147,7 @@ const Navigation = ({ classes, handleThemeChange }) => {
       <Button onClick={toggleDrawer(currentDrawerDirection, true)}>
         <MenuIcon />
       </Button>
-      <Drawer
+      <Drawer 
         anchor={currentDrawerDirection}
         open={drawer[currentDrawerDirection]}
         onClose={toggleDrawer(currentDrawerDirection, false)}

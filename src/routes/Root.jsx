@@ -2,6 +2,10 @@ import { Button } from "@mui/material";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Navigation from "../globalComponent/Navigation";
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import ContactsIcon from '@mui/icons-material/Contacts';
 
 const Root = () => {
   const darkThemeStyle = {
@@ -69,8 +73,19 @@ const Root = () => {
       <main id="appRoot" style={{ paddingTop: "8.5em", ...currentTheme }}>
         <Outlet />
       </main>
+      <footer style={{
+          ...currentTheme
+        }} >
+      <div>
+      <a href="https://twitter.com/?lang=fr"><TwitterIcon className="icons" /></a>
+      <a href="https://www.instagram.com/?hl=fr"><InstagramIcon className="icons"  /></a>
+      <a href="https://fr-fr.facebook.com/"><FacebookIcon className="icons"  /></a>
+      <a href="mailto:vdubuisson@normandiewebschool.fr"><ContactsIcon className="icons"  /></a>
+      </div>
+      <a href="https://www.twitch.tv/gsdc_"><img style={{color:"blue"}} className="icons" src="public/images/twitch.svg" alt="twitch logo" /></a>
+        </footer>
     </>
   );
 };
 
-export default Root;
+export default Root;  

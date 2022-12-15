@@ -64,11 +64,11 @@ const Home = () => {
             <span style={{ fontWeight: "bold" }}>le 21 et 22 Janvier 2022.</span>
           </p>
         <div
+        className="expo-block"
           style={{
             display: "flex",
             gap: ".6em",
             justifyContent: "space-between",
-            flexWrap: window.innerWidth <= 365 ? "wrap" : "no-wrap"
           }}
         >
           <img

@@ -91,7 +91,7 @@ document.querySelector("body").style.background = currentTheme.backgroundColor
       <a href="https://fr-fr.facebook.com/"><FacebookIcon className="icons"  /></a>
       <a href="mailto:vdubuisson@normandiewebschool.fr"><ContactsIcon className="icons"  /></a>
       </div>
-      <a href="https://www.twitch.tv/gsdc_"><img style={{color:"blue"}} className="icons" src="public/images/twitch.svg" alt="twitch logo" /></a>
+      <a href="https://www.twitch.tv/gsdc_"><img style={{color:"blue"}} className="icons" src="/images/twitch.svg" alt="twitch logo" /></a>
         </footer>
     </>
   );

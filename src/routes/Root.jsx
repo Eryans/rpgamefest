@@ -5,7 +5,7 @@ import Navigation from "../globalComponent/Navigation";
 
 const Root = () => {
   const darkThemeStyle = {
-    backgroundColor: "rgb(25,25,25)",
+    backgroundColor: "rgba(25,25,25,.8)",
     color:"white"
   };
   const lightThemeStyle = {

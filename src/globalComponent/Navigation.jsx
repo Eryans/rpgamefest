@@ -62,10 +62,10 @@ const Navigation = ({ classes, handleThemeChange }) => {
 
     return (
       <Box
-        sx={{ width: "60vw" }}
+        sx={{ width: window.innerWidth >= 1080 ? "30vw" : "60vw", display: window.innerWidth >= 1080 ? "block" : "initial" }}
         role="presentation"
-        onClick={toggleDrawer(currentDrawerDirection, false)}
-        onKeyDown={toggleDrawer(currentDrawerDirection, false)}
+        onClick={() => toggleDrawer(currentDrawerDirection, false)}
+        onKeyDown={() => toggleDrawer(currentDrawerDirection, false)}
       >
         <List id="navigation-list">
           <ListItem disablePadding>

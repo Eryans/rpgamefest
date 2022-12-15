@@ -19,7 +19,7 @@ const PlanningCard = ({ title, date, peoples, onClick, place }) => {
         }}
       >
         <div
-          class="planning-card-overlay"
+          className="planning-card-overlay"
           style={{
             background:
               window.localStorage["currentTheme"] === "dark"
@@ -55,6 +55,7 @@ const DataDrawer = ({ open, data, setOpen }) => {
   const gradiantDark =
     "linear-gradient( 150deg, rgba(25, 25, 25, 1) 0%,rgba(25, 25, 25, 1) 60%, rgba(25, 25, 25, 0.9) 75%,rgba(0, 212, 255, 0) 100%)";
   const drawerWidth = window.innerWidth >= 720 ? "45vw" : "100vw";
+
   return (
     data && (
       <>
@@ -66,7 +67,7 @@ const DataDrawer = ({ open, data, setOpen }) => {
             position: "fixed",
             top: 0,
             left: 0,
-            zIndex:99,
+            zIndex: 99,
           }}
           onClick={() => setOpen(false)}
         />
@@ -85,7 +86,7 @@ const DataDrawer = ({ open, data, setOpen }) => {
           }}
         >
           <div
-            class="planning-card-overlay-drawer"
+            className="planning-card-overlay-drawer"
             style={{
               background:
                 window.localStorage["currentTheme"] === "dark"
@@ -109,7 +110,7 @@ const DataDrawer = ({ open, data, setOpen }) => {
             onClick={() => setOpen(false)}
           />
           <div
-            class="drawer-data"
+            className="drawer-data"
             style={{
               color:
                 window.localStorage["currentTheme"] === "dark"

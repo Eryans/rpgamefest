@@ -37,7 +37,19 @@
 .home-text-block img {
   width: 100%;
 }
-
+.plan-container{
+  display: flex;
+  flex-direction: column;
+  gap:5em;
+}
+.stand-card{
+  padding: .1em 1em;
+}
+.planning-card-container{
+  display: flex;
+  flex-direction: column;
+  gap:1em;
+}
 @media screen and (min-width: 720px) {
   .planning-card-container{
     display:grid;
@@ -61,6 +73,10 @@
     display: flex;
     flex-direction: column;
     width: 50vw;
+  }
+  .drawer-data{
+    width: 100%;
+    padding-left: 4.5em !important;
   }
 }
 @media screen and (min-width: 1080px) {

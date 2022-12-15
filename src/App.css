@@ -52,10 +52,10 @@
 }
 .nav-desk ul{
   height: 100%;
-  width:300px;
+  width:300px ;
   background-color: white;
   position: fixed;
-  top: 4.5em;
+  top: 8em;
   left: 0;
 }
 @media screen and (min-width: 720px) {

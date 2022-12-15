@@ -2,10 +2,10 @@ import { Button } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Navigation from "../globalComponent/Navigation";
-import TwitterIcon from '@mui/icons-material/Twitter';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import ContactsIcon from '@mui/icons-material/Contacts';
+import TwitterIcon from "@mui/icons-material/Twitter";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import ContactsIcon from "@mui/icons-material/Contacts";
 
 const Root = () => {
   const darkThemeStyle = {
@@ -13,7 +13,7 @@ const Root = () => {
     color: "white",
   };
   const lightThemeStyle = {
-    backgroundColor: "rgb(255,255,255)",
+    backgroundColor: "rgba(255,255,255)",
     color: "black",
   };
   if (!window.localStorage["currentTheme"])
@@ -56,45 +56,84 @@ const Root = () => {
       false
     );
   }
-document.querySelector("body").style.background = currentTheme.backgroundColor
+  document.querySelector("body").style.background =
+    currentTheme.backgroundColor;
   return (
     <>
       <header
         style={{
           position: "fixed",
           width: window.innerWidth >= 1080 ? "300px" : "100vw",
-          zIndex: 99,
+          zIndex: window.innerWidth <= 720 ? 1 : 99,
           height: isScrollingDown ? "0px" : "initial",
           opacity: isScrollingDown ? 0 : 1,
           transition: "all .1s linear",
+          borderBottom:"1px solid lightgray",
           ...currentTheme,
         }}
       >
-        <Navigation handleThemeChange={handleThemeChange} currentTheme={currentTheme} />
+        <Navigation
+          handleThemeChange={handleThemeChange}
+          currentTheme={currentTheme}
+        />
       </header>
       <main
         id="appRoot"
         style={{
+          position:"relative",
           paddingTop: "8.5em",
           paddingLeft: window.innerWidth >= 1080 ? "300px" : "none",
           ...currentTheme,
+          borderBottom:"1px solid lightgray"
         }}
       >
+        <div
+          className="main-image"
+          style={{
+            width:"100%",
+            height:"100%",
+            position:"absolute",
+            top:0,
+            left:0,
+            opacity:.05,
+            backgroundImage:
+              window.localStorage["currentTheme"] === "dark"
+                ? "url(/images/dice.jpg)"
+                : "",
+          }}
+        />
         <Outlet />
       </main>
-      <footer style={{
-          ...currentTheme
-        }} >
-      <div>
-      <a href="https://twitter.com/?lang=fr"><TwitterIcon className="icons" /></a>
-      <a href="https://www.instagram.com/?hl=fr"><InstagramIcon className="icons"  /></a>
-      <a href="https://fr-fr.facebook.com/"><FacebookIcon className="icons"  /></a>
-      <a href="mailto:vdubuisson@normandiewebschool.fr"><ContactsIcon className="icons"  /></a>
-      </div>
-      <a href="https://www.twitch.tv/gsdc_"><img style={{color:"blue"}} className="icons" src="/images/twitch.svg" alt="twitch logo" /></a>
-        </footer>
+      <footer
+        style={{
+          ...currentTheme,
+        }}
+      >
+        <div>
+          <a href="https://twitter.com/?lang=fr">
+            <TwitterIcon className="icons" />
+          </a>
+          <a href="https://www.instagram.com/?hl=fr">
+            <InstagramIcon className="icons" />
+          </a>
+          <a href="https://fr-fr.facebook.com/">
+            <FacebookIcon className="icons" />
+          </a>
+          <a href="mailto:vdubuisson@normandiewebschool.fr">
+            <ContactsIcon className="icons" />
+          </a>
+        </div>
+        <a href="https://www.twitch.tv/gsdc_">
+          <img
+            style={{ color: "blue" }}
+            className="icons"
+            src="/images/twitch.svg"
+            alt="twitch logo"
+          />
+        </a>
+      </footer>
     </>
   );
 };
 
-export default Root;  
+export default Root;

@@ -68,6 +68,7 @@ const Home = () => {
             display: "flex",
             gap: ".6em",
             justifyContent: "space-between",
+            flexWrap: window.innerWidth <= 365 ? "wrap" : "no-wrap"
           }}
         >
           <img

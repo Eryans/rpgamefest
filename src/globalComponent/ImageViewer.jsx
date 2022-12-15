@@ -18,6 +18,8 @@ const ImageViewer = ({ image }) => {
           <div
             style={{
               overflowX: "scroll",
+              display: "flex",
+              justifyContent: "center",
               height: "100vh",
               width: "100vw",
               position: "fixed",
@@ -35,10 +37,14 @@ const ImageViewer = ({ image }) => {
                 right: ".25em",
                 zIndex: 2,
                 cursor: "pointer",
+                color: "grey",
               }}
               onClick={() => setOpenMap(false)}
             />
-            <img style={{ height: "100%", objectFit: "contain",width:"200vw"}} src={image} />
+            <img
+              style={{ height: "100%", objectFit: "contain", width: "200vw" }}
+              src={image}
+            />
           </div>
         </>
       )}

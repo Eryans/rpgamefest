@@ -3,20 +3,31 @@ import { useState } from "react";
 import { days, planningData } from "../data/planningData";
 import CloseIcon from "@mui/icons-material/Close";
 
-const PlanningCard = ({
-  title,
-  date,
-  peoples,
-  onClick,
-  place,
-}) => {
+const PlanningCard = ({ title, date, peoples, onClick, place }) => {
+  const gradiantLight =
+    "linear-gradient( 35deg, rgba(255, 255, 255, 1) 0%,rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 0.9) 75%,rgba(0, 212, 255, 0) 100%)";
+  const gradiantDark =
+    "linear-gradient( 35deg, rgba(50, 50, 50, 1) 0%,rgba(50, 50, 50, 1) 60%, rgba(50, 50, 50, 0.9) 75%,rgba(0, 212, 255, 0) 100%)";
 
   return (
     <div style={{ width: "100%" }}>
-      <Paper className="planning-card">
-        <p>
-          {date.hour}
-        </p>
+      <Paper
+        className="planning-card"
+        style={{
+          color:
+            window.localStorage["currentTheme"] === "dark" ? "black" : "white",
+        }}
+      >
+        <div
+          class="planning-card-overlay"
+          style={{
+            background:
+              window.localStorage["currentTheme"] === "dark"
+                ? gradiantLight
+                : gradiantDark,
+          }}
+        />
+        <p>{date.hour}</p>
         <h3>{title}</h3>
         <div>
           <p>
@@ -39,49 +50,89 @@ const PlanningCard = ({
 };
 
 const DataDrawer = ({ open, data, setOpen }) => {
+  const gradiantLight =
+    "linear-gradient( 150deg, rgba(255, 255, 255, 1) 0%,rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 0.9) 75%,rgba(0, 212, 255, 0) 100%)";
+  const gradiantDark =
+    "linear-gradient( 150deg, rgba(25, 25, 25, 1) 0%,rgba(25, 25, 25, 1) 60%, rgba(25, 25, 25, 0.9) 75%,rgba(0, 212, 255, 0) 100%)";
+  const drawerWidth = window.innerWidth >= 720 ? "45vw" : "100vw";
   return (
     data && (
-      <Paper
-        className="planning-card"
-        style={{
-          zIndex: 99,
-          position: "fixed",
-          transition: "all .2s linear",
-          top: 0,
-          right: 0,
-          height: "100vh",
-          opacity: open ? "1" : 0,
-          pointerEvents: open ? "initial" : "none",
-          width: open ? "100vw" : 0,
-        }}
-      >
-        <CloseIcon
+      <>
+        <div
           style={{
-            fontSize: "1.75em",
+            width: "100%",
+            height: "100%",
+            display: open ? "block" : "none",
             position: "fixed",
             top: 0,
-            right: ".25em",
-            zIndex: 2,
-            cursor: "pointer",
+            left: 0,
+            zIndex:99,
           }}
           onClick={() => setOpen(false)}
         />
-        <div class="drawer-data">
-          <p>
-            {data.date.day} {data.date.hour}
-          </p>
-          <h3>{data.title}</h3>
-          <div>
+        <Paper
+          className="planning-card"
+          style={{
+            zIndex: 99,
+            position: "fixed",
+            transition: "all .2s linear",
+            top: 0,
+            right: 0,
+            height: "100vh",
+            opacity: open ? "1" : 0,
+            pointerEvents: open ? "initial" : "none",
+            width: open ? drawerWidth : 0,
+          }}
+        >
+          <div
+            class="planning-card-overlay-drawer"
+            style={{
+              background:
+                window.localStorage["currentTheme"] === "dark"
+                  ? gradiantLight
+                  : gradiantDark,
+            }}
+          />
+          <CloseIcon
+            style={{
+              fontSize: "1.75em",
+              position: "fixed",
+              top: 0,
+              right: ".25em",
+              zIndex: 99,
+              cursor: "pointer",
+              color:
+                window.localStorage["currentTheme"] === "light"
+                  ? "white"
+                  : "black",
+            }}
+            onClick={() => setOpen(false)}
+          />
+          <div
+            class="drawer-data"
+            style={{
+              color:
+                window.localStorage["currentTheme"] === "dark"
+                  ? "black"
+                  : "white",
+            }}
+          >
             <p>
-              {data.peoples.map((people, i) => (
-                <span key={people + i}>{people}&nbsp;</span>
-              ))}
+              {data.date.day} {data.date.hour}
             </p>
+            <h3>{data.title}</h3>
+            <div>
+              <p>
+                {data.peoples.map((people, i) => (
+                  <span key={people + i}>{people}&nbsp;</span>
+                ))}
+              </p>
+            </div>
+            <p>{data.place}</p>
+            <div>{data.description}</div>
           </div>
-          <p>{data.place}</p>
-          <div>{data.description}</div>
-        </div>
-      </Paper>
+        </Paper>
+      </>
     )
   );
 };
@@ -94,7 +145,7 @@ const Planning = () => {
       <DataDrawer open={open} data={data} setOpen={setOpen} />
       <h1>Planning</h1>
       <h2>Premier jour</h2>
-      <List>
+      <List className="planning-card-container">
         {planningData.map((data, i) => {
           if (data.date.day === days[0])
             return (
@@ -116,7 +167,7 @@ const Planning = () => {
       </List>
       <Divider />
       <h2>Deuxième jour</h2>
-      <List>
+      <List className="planning-card-container">
         {planningData.map((data, i) => {
           if (data.date.day === days[1])
             return (

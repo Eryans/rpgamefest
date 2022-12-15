@@ -69,7 +69,7 @@ const Navigation = ({ classes, handleThemeChange }) => {
         onKeyDown={toggleDrawer(currentDrawerDirection, false)}
       >
         <List id="navigation-list">
-          <ListItem disablePadding> 
+          <ListItem disablePadding>
             <ListItemButton onClick={handleThemeChange}>
               <ListItemIcon style={{ minWidth: 0 }}>
                 <DarkModeIcon />
@@ -133,11 +133,17 @@ const Navigation = ({ classes, handleThemeChange }) => {
 
   return (
     <nav>
-      <img
-        style={{ width: "4.25em" }}
-        src={ window.localStorage["currentTheme"] === "dark"? "/images/logo_asso.png" : "/images/logo_asso_blanc.png"}
-        alt="Logo de rpgameFest"
-      />
+      <Link to="/">
+        <img
+          style={{ width: "3em" }}
+          src={
+            window.localStorage["currentTheme"] === "dark"
+              ? "/images/logo_asso.png"
+              : "/images/logo_asso_blanc.png"
+          }
+          alt="Logo de rpgameFest"
+        />
+      </Link>
       <Button onClick={toggleDrawer(currentDrawerDirection, true)}>
         <MenuIcon />
       </Button>

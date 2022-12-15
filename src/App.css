@@ -12,6 +12,7 @@
   flex-direction: column;
   gap: 0.5em;
   background-image: url(/public/images/dice.jpg);
+  border-left: 3px solid #3B6B90;
 }
 .planning-card-overlay {
   position: absolute;
@@ -48,7 +49,12 @@
 .planning-card-container {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap:2em;
+}
+.plan-card-container{
+  display: flex;
+  flex-direction: column;
+  gap:2em;
 }
 .nav-desk ul {
   height: 100%;
@@ -73,6 +79,10 @@ main > div:not(:first-child) {
   .planning-card-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+  }
+  .plan-card-container{
+    display:grid;
+    grid-template-columns: repeat(5,1fr);
   }
   main > div {
     display: flex;
@@ -150,3 +160,4 @@ main > div:not(:first-child) {
 .read-the-docs {
   color: #888;
 }
+

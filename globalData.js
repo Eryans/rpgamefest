@@ -1,1 +1,1 @@
-export const ticketLink = "*"
+export const ticketLink = "https://google.fr"

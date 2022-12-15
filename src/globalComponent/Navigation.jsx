@@ -131,8 +131,8 @@ const Navigation = ({ classes, handleThemeChange, currentTheme }) => {
           style={{ width: "4em" }}
           src={
             window.localStorage["currentTheme"] === "dark"
-              ? "/images/logo_asso.png"
-              : "/images/logo_asso_blanc.png"
+              ? "/images/logo_asso.svg"
+              : "/images/logo_asso_blanc.svg"
           }
           alt="Logo de rpgameFest"
         />

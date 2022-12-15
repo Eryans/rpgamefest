@@ -84,13 +84,11 @@ const Root = () => {
           paddingTop: "8.5em",
           paddingLeft: window.innerWidth >= 1080 ? "300px" : "none",
           ...currentTheme,
-          borderBottom:"1px solid lightgray"
         }}
       >
         <div
           className="main-image"
           style={{
-            width:"100%",
             height:"100%",
             position:"absolute",
             top:0,

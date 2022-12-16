@@ -61,7 +61,7 @@ const Home = () => {
           <p style={{ marginBlockStart: "0.5em" }}>
             Rpgaming Fest est présent cette année au Parc Exposition de Rouen.
             Retrouvez nous{" "}
-            <span style={{ fontWeight: "bold" }}>le 21 et 22 Janvier 2022.</span>
+            <span style={{ fontWeight: "bold" }}>le 21 et 22 Janvier 2023.</span>
           </p>
         <div
         className="expo-block"

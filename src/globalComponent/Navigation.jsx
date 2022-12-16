@@ -82,11 +82,7 @@ const Navigation = ({ classes, handleThemeChange, currentTheme }) => {
             </ListItemButton>
           </ListItem>
           {linkData.map((data, index) => (
-            <ListItem
-              key={data.text + index}
-              disablePadding
-              onClick={() => toggleDrawer(currentDrawerDirection, false)}
-            >
+            <ListItem key={data.text + index} disablePadding>
               <ListItemButton>
                 {data.external ? (
                   <a
@@ -109,6 +105,7 @@ const Navigation = ({ classes, handleThemeChange, currentTheme }) => {
                       display: "flex",
                       gap: ".5em",
                     }}
+                    onClick={toggleDrawer(currentDrawerDirection, false)}
                   >
                     <ListItemIcon style={{ minWidth: 0 }}>
                       {data.icon}

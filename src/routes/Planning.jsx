@@ -145,7 +145,7 @@ const Planning = () => {
     <>
       <DataDrawer open={open} data={data} setOpen={setOpen} />
       <h1 className="enchanted" style={{fontSize:"4em"}} >Planning</h1>
-      <h2 className="enchanted" style={{fontSize:"3em"}} >Premier jour</h2>
+      <h2 className="enchanted" style={{fontSize:"2em",lineHeight:"10px"}} >21/01/2023</h2>
       <List className="planning-card-container">
         {planningData.map((data, i) => {
           if (data.date.day === days[0])
@@ -167,7 +167,7 @@ const Planning = () => {
         })}
       </List>
       <Divider />
-      <h2 className="enchanted" style={{fontSize:"3em"}} >Deuxième jour</h2>
+      <h2 className="enchanted" style={{fontSize:"2em",lineHeight:"10px",marginTop:"2em"}} >22/01/2023</h2>
       <List className="planning-card-container">
         {planningData.map((data, i) => {
           if (data.date.day === days[1])

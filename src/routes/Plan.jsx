@@ -12,7 +12,13 @@ const StandCard = ({ name, type, place }) => {
     "linear-gradient( 35deg, rgba(50, 50, 50, 1) 0%,rgba(50, 50, 50, 1) 60%, rgba(50, 50, 50, 0.9) 75%,rgba(0, 212, 255, 0) 100%)";
 
   return (
-    <Paper className="planning-card">
+    <Paper className="planning-card"
+    style={{
+      color:
+        window.localStorage["currentTheme"] === "dark"
+          ? "black"
+          : "white",
+    }}>
       <div
           className="planning-card-overlay"
           style={{

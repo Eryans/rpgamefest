@@ -8,6 +8,9 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
       injectRegister: "auto",
+      devOptions: {
+        enabled: true,
+      },
       manifest: {
         name: "RpgameFest",
         short_name: "RPG Fest",
